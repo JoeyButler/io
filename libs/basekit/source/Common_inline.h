@@ -52,16 +52,16 @@ Kudos to Daniel A. Koepke
 
 #if defined(__APPLE__) 
 
-	#define NS_INLINE static __inline__ __attribute__((always_inline))
+	#define IO_NS_INLINE static inline
 
 	#ifdef IO_IN_C_FILE
 		// in .c 
 		#define IO_DECLARE_INLINES
-		#define IOINLINE NS_INLINE
+		#define IOINLINE IO_NS_INLINE
 	#else
 		// in .h 
 		#define IO_DECLARE_INLINES
-		#define IOINLINE NS_INLINE
+		#define IOINLINE IO_NS_INLINE
 	#endif 	
 
 /*		
